@@ -9,19 +9,21 @@ function Dog(props) {
   return (
     <div className="dogDiv">
       <div className="btnDiv">
-        {!props.dog && !props.isLoading && <h2>Let's see a new dog!</h2>}
-        <Button color="success" onClick={() => props.fetchDog()}>Get New Dog</Button>
-        </div>
-        {props.isLoading && (
-          <Loader
-            type="Puff"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            timeout={3000}
-          />
-        )}
-      
+        <Button color="success" onClick={() => props.fetchDog()}>
+          Get New Dog
+        </Button>
+        {!props.dog && !props.isLoading && <h2>Click to see a new dog!</h2>}
+      </div>
+      {props.isLoading && (
+        <Loader
+          type="Puff"
+          color="white"
+          height={100}
+          width={100}
+          timeout={3000}
+        />
+      )}
+
       {props.dog && !props.isLoading && (
         <img alt="our new dog" src={props.dog.message}></img>
       )}
