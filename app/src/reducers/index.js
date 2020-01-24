@@ -6,7 +6,7 @@ import {
 
 const initialState = {
     isLoading: false,
-    dog: 'null',
+    dog: null,
     error: ''
   };
   
